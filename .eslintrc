@@ -15,7 +15,6 @@
     "es6": true
   },
   "plugins": [
-    "react"
   ],
   "settings" : {
     "import/resolver": {
@@ -47,9 +46,7 @@
       jsx: 'never',
     }],
     "react/prefer-stateless-function": "off",
-    "react/no-unused-prop-types": [2, {
-      skipShapeProps: false
-    }],
+    "react/no-unused-prop-types": 0,
     "import/prefer-default-export": "off",
     "function-paren-newline": "off"
   }
