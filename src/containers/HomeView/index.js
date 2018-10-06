@@ -11,12 +11,12 @@ class HomeView extends Component {
 
     return (
       <div>
-        <Drawer variant="persistent" anchor="right" open styles={{ width: 256 }}>
+        <Drawer variant="persistent" anchor="left" open>
           <PromptComposer />
         </Drawer>
         <div>
           <p>Viewing Prompts</p>
-          <div className="prompts" style={{ marginRight: 256 }}>
+          <div className="prompts">
             <PromptList prompts={api.prompts()} />
           </div>
         </div>
