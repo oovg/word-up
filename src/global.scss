@@ -55,8 +55,15 @@ a:hover {
 
 // Drawer overrides
 
-.MuiDrawer-docked-1 {
-  .MuiDrawer-paper-2 {
-    width: 50%;
-  }
+
+.MuiDrawer-paperAnchorRight-4 {
+  width: 50%;
+}
+
+.drawer--prompt {
+  width: 50%;
+}
+
+.drawer--party {
+  width: 50%;
 }

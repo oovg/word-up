@@ -1,3 +1,13 @@
 :local(.styles) {
 
+
+
+}
+
+.toolbar {
+  width: calc(100% - 50px);
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
 }
