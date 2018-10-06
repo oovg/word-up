@@ -34,9 +34,13 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $base-font;
   color: #333;
 }
-a:hover {
-  text-decoration: none;
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
 }
+
 .button {
   border: 2px solid $od-light-purple;
   padding: 10px 15px;

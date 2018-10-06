@@ -9,7 +9,11 @@ const AppBar = (props) => {
   return (
     <div className={styles}>
       <div className="app-bar">
-        {children}
+        <h1>wordUp</h1>
+        <div className="nav">
+          <a className="nav-item">Prompts</a>
+          <a className="nav-item">Dashboard</a>
+        </div>
       </div>
     </div>
   )

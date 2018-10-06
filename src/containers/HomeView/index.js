@@ -2,6 +2,7 @@ import { Drawer } from '@material-ui/core'
 import React, { Component } from 'react'
 import PromptComposer from '../../components/PromptComposer'
 import PromptList from '../../components/PromptList'
+import AppBar from '../../components/AppBar'
 import Api from '../../api/api'
 import Add from '@material-ui/icons/Add'
 
@@ -39,6 +40,7 @@ class HomeView extends Component {
         </div>
           <PromptComposer />
         </Drawer>
+        <AppBar />
         <div className="toolbar">
           <p>Viewing Prompts</p>
           <button className="button" onClick={this.toggleDrawer('right', true)}><Add /> Add A Prompt</button>
