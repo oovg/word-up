@@ -1,8 +1,36 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900');
 
+@import url('https://fonts.googleapis.com/css?family=Rubik:100,200,300,400,500,700,900');
+
+$base-font: 'Rubik', sans-serif;
+$prompt-font: 'Merriweather', serif;
+
+// Color Palette
+$cream: rgba(249,248,244,1);
+$cream-dark: rgba(243, 242, 237, 1);
+// others
+$od-primary: rgba(38,28,70,1);
+$od-yellow: rgba(244,230,89,1);
+$od-light-purple: rgba(93,63,152,1);
+$od-green: rgba(191,222,189,1);
+$ntv-primary: rgba(166,191,76,1);
+$ntv-action: rgba(248, 128, 115,1);
+$ntv-sky: rgba(132,206,200,1);
+$ntv-cream-darker: rgba(237,232,226,1);
+
+//Media Queries
+$tablet: 768px;
+$phone: 420px;
+
 body {
-  font-family: 'Merriweather';
+  font-family: $base-font;
   font-size: 16px;
   line-height: 1.35em;
   font-weight: 300;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $base-font;
+  color: #333;
 }

@@ -7,7 +7,7 @@ import './styles.scss'
 const Prompt = ({ data, ...props }) => (
   <div className="prompt" {...props}>
     <div className="contents">
-      <p>{data.prompt.body}</p>
+      <p className="body">{data.prompt.body}</p>
       <p>Read more »</p>
     </div>
     <div>

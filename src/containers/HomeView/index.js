@@ -1,9 +1,17 @@
 import React, { Component } from 'react'
+import PromptList from '../../components/PromptList'
+import prompts from '../../data/prompts.js'
 
 class HomeView extends Component {
   render() {
     return (
-      <div className="container">Welcome to React Dapp Boilerplate!</div>
+      <div>
+        <div>Viewing Prompts</div>
+        <div className="prompts">
+          <PromptList prompts={prompts} />
+        </div>
+      </div>
+
     )
   }
 }
