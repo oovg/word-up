@@ -1,12 +1,13 @@
-import React from 'react'
+
+import React, { Fragment } from 'react'
 import Prompt from '../Prompt'
 
 const PromptList = ({ prompts, ...props }) => (
-  <div {...props}>
+  <Fragment>
     {prompts.map(prompt => (
       <Prompt data={prompt} key={prompt.id} />
         ))}
-  </div>
+  </Fragment>
 )
 
 export default PromptList
