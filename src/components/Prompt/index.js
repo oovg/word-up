@@ -8,16 +8,17 @@ import './styles.scss'
 const Prompt = ({ data, ...props }) => (
   <div className="prompt" {...props}>
     <div className="contents">
-      <div clasName="actions">
-        <span>{data.marketCap}</span>
-        <KeyboardArrowUp />
-        <KeyboardArrowDown />
+      <div className="actions">
+        <p className="market-cap">${data.marketCap}</p>
+        <div className="buy-sell">
+          <a className="button"><KeyboardArrowUp /></a>
+          <a className="button"><KeyboardArrowDown /></a>
+        </div>
       </div>
       <div className="body">
         <p>{data.body}</p>
         <a className="button">Read more <MoreHoriz /></a>
       </div>
-
     </div>
   </div>
 )
