@@ -5,10 +5,12 @@ import PromptList from '../../components/PromptList'
 import Api from '../../api/api'
 
 class HomeView extends Component {
-  render() {
-    // TODO: Take this out of render into a constructor.
-    const api = new Api()
+  constructor() {
+    super()
+    this.api = new Api()
+  }
 
+  render() {
     return (
       <div>
         <Drawer variant="persistent" anchor="left" open>
@@ -16,8 +18,8 @@ class HomeView extends Component {
         </Drawer>
         <div>
           <p>Viewing Prompts</p>
-          <div className="prompts">
-            <PromptList prompts={api.prompts()} />
+          <div className="prompts" style={{ marginRight: 256 }}>
+            <PromptList prompts={this.api.prompts()} />
           </div>
         </div>
       </div>
