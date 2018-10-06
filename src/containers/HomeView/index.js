@@ -1,4 +1,6 @@
+import { Drawer } from '@material-ui/core'
 import React, { Component } from 'react'
+import PromptComposer from '../../components/PromptComposer'
 import PromptList from '../../components/PromptList'
 import Api from '../../api/api'
 
@@ -9,9 +11,14 @@ class HomeView extends Component {
 
     return (
       <div>
-        <div>Viewing Prompts</div>
-        <div className="prompts">
-          <PromptList prompts={api.prompts()} />
+        <Drawer variant="persistent" anchor="right" open styles={{ width: 256 }}>
+          <PromptComposer />
+        </Drawer>
+        <div>
+          <p>Viewing Prompts</p>
+          <div className="prompts" style={{ marginRight: 256 }}>
+            <PromptList prompts={api.prompts()} />
+          </div>
         </div>
       </div>
 

@@ -8,8 +8,6 @@ import {
 } from 'react-router-dom'
 import theme                    from 'configs/theme/config-theme'
 import HomeView                 from 'containers/HomeView'
-import Header                   from './components/Header'
-import Footer                   from './components/Footer'
 
 import './styles.scss' // global styles
 
@@ -18,15 +16,11 @@ class App extends Component {
     return (
       <MuiThemeProvider theme={theme}>
         <HashRouter>
-          <div>
-            <Header />
-            <Footer />
-            <div className="app-shell">
-              <Switch>
-                <Route path="/home" component={HomeView} />
-                <Redirect from="/" to="/home" />
-              </Switch>
-            </div>
+          <div className="app-shell">
+            <Switch>
+              <Route path="/home" component={HomeView} />
+              <Redirect from="/" to="/home" />
+            </Switch>
           </div>
         </HashRouter>
       </MuiThemeProvider>
