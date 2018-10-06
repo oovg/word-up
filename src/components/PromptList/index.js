@@ -4,7 +4,7 @@ import Prompt from '../Prompt'
 const PromptList = ({ prompts, ...props }) => (
   <div {...props}>
     {prompts.map(prompt => (
-      <Prompt data={prompt} />
+      <Prompt data={prompt} key={prompt.id} />
         ))}
   </div>
 )
