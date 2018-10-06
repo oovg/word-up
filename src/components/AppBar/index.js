@@ -8,9 +8,9 @@ const AppBar = (props) => {
 
   return (
     <div className={styles}>
-      <MuiAppBar position="static" className="app-bar">
+      <div className="app-bar">
         {children}
-      </MuiAppBar>
+      </div>
     </div>
   )
 }

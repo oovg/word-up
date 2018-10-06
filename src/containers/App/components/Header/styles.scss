@@ -1,8 +1,19 @@
+@import '../global.scss';
+
 :local(.styles) {
   position: fixed;
   top: 0px;
   width: 100%;
   z-index: 1;
+
+
+  .app-bar {
+    background-color: $cream;
+  }
+
+  h1 {
+    color: $od-light-purple;
+  }
 
   .dropdown {
     position: absolute;

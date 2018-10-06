@@ -1,5 +1,6 @@
 import KeyboardArrowDown from '@material-ui/icons/KeyboardArrowDown'
 import KeyboardArrowUp from '@material-ui/icons/KeyboardArrowUp'
+import MoreHoriz from '@material-ui/icons/MoreHoriz'
 import React from 'react'
 
 import './styles.scss'
@@ -12,8 +13,11 @@ const Prompt = ({ data, ...props }) => (
         <KeyboardArrowUp />
         <KeyboardArrowDown />
       </div>
-      <p className="body">{data.body}</p>
-      <div className="read-more"><a className="button"> Read more »</a></div>
+      <div className="body">
+        <p>{data.body}</p>
+        <a className="button">Read more <MoreHoriz /></a>
+      </div>
+
     </div>
   </div>
 )

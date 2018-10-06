@@ -21,16 +21,17 @@
     flex-direction: row;
     flex-wrap: wrap;
     .body {
-      font-family: $prompt-font;
-      font-size: 32px;
-      line-height: 1.5em;
+      display: flex;
+      flex-direction: column;
       flex-basis: 75%;
+      p {
+        font-family: $prompt-font;
+        font-size: 32px;
+        line-height: 1.5em;
+      }
     }
     .actions {
       flex-basis: 25%;
-    }
-    .read-more {
-      flex-basis: 100%;
     }
   }
 }
