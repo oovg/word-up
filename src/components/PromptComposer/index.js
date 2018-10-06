@@ -13,8 +13,10 @@ class PromptComposer extends Component {
       const { onSubmit, ...props } = this.props
       return (
         <div {...props} className="prompt-composer">
-          <TextField value={this.state.value} label={'Add a prompt'}onChange={this.handleChange} required />
-          <button className="button" variant="contained" onClick={onSubmit}>Create</button>
+          <div className="form">
+            <TextField value={this.state.value} label={'Add a prompt'}onChange={this.handleChange} required />
+            <button className="button" variant="contained" onClick={onSubmit}>Create</button>
+          </div>
         </div>
       )
     }
