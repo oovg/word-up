@@ -13,7 +13,7 @@ class HomeView extends Component {
   render() {
     return (
       <div>
-        <Drawer variant="persistent" anchor="right" open styles={{ width: 256 }}>
+        <Drawer variant="persistent" anchor="left" open>
           <PromptComposer />
         </Drawer>
         <div>

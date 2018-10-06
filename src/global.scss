@@ -52,3 +52,11 @@ a:hover {
     background-color: $od-light-purple;
   }
 }
+
+// Drawer overrides
+
+.MuiDrawer-docked-1 {
+  .MuiDrawer-paper-2 {
+    width: 50%;
+  }
+}
