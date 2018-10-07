@@ -3,6 +3,7 @@ import PropTypes               from 'prop-types'
 import { AppBar as MuiAppBar } from '@material-ui/core'
 import { styles }              from './styles.scss'
 import { Link } from 'react-router-dom'
+import NetworkStatus from 'react-web3-network-status'
 
 const AppBar = (props) => {
   const { children } = props
@@ -27,6 +28,9 @@ const AppBar = (props) => {
         <div className="nav">
           <Link to="/" className="nav-item">Prompts</Link>
           <Link to="/" className="nav-item">Dashboard</Link>
+          <div className="nav-item network">
+          <NetworkStatus />
+          </div>
         </div>
       </div>
     </div>
