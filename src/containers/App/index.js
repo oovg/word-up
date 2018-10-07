@@ -1,32 +1,45 @@
 import { connect } from 'react-redux'
-import { MuiThemeProvider } from '@material-ui/core/styles'
 import React, { Component } from 'react'
+import { Drawer } from '@material-ui/core'
+import Close from '@material-ui/icons/Close'
+import { MuiThemeProvider } from '@material-ui/core/styles'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import theme from 'configs/theme/config-theme'
 import HomeView from 'containers/HomeView'
 import PromptView from 'containers/PromptView'
 
 
-import { Drawer } from '@material-ui/core'
-import Close from '@material-ui/icons/Close'
+import constants from 'core/types'
 import PromptComposer from '../../components/PromptComposer'
+import { closeRightDrawer } from '../../core/actions/actions-ui'
 
 import './styles.scss' // global styles
 
 class App extends Component {
+  element() {
+    if (this.props.drawerContext === constants.PROMPT_COMPOSER) {
+      return (
+        <PromptComposer />
+      )
+    }
+
+    return null
+  }
+
   drawer() {
     return (
-      <Drawer width="50%" className="drawer--prompt" anchor="right" open={this.props.drawerOpen} onClose={this.toggleDrawer}>
+      <Drawer width="50%" className="drawer--prompt" anchor="right" open={this.props.drawerOpen} onClose={this.props.closeRightDrawer}>
         <button
           className="button plain button--close"
           tabIndex={0}
           role="button"
-          onClick={this.toggleDrawer}
-          onKeyDown={this.toggleDrawer}
+          onClick={this.props.closeRightDrawer}
+          onKeyDown={this.props.closeRightDrawer}
         >
           <Close />
         </button>
-        <PromptComposer />
+
+        { this.element() }
       </Drawer>
     )
   }
@@ -48,8 +61,9 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    drawerOpen: state.ui.rightDrawerIsOpen
+    drawerOpen: state.ui.rightDrawerIsOpen,
+    drawerContext: state.ui.drawerContext
   }
 }
 
-export default connect(mapStateToProps, null)(App)
+export default connect(mapStateToProps, { closeRightDrawer })(App)
