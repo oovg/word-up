@@ -9,8 +9,11 @@ const initialState = {
     openModal: false,
     modalKey: ''
   },
-  rightDrawerIsOpen: false,
-  drawerContext: constants.PROMPT_COMPOSER
+  drawer: {
+    context: constants.PROMPT_COMPOSER,
+    data: {},
+    open: false
+  }
 }
 
 function uiReducer(state = initialState, action) {
@@ -47,17 +50,29 @@ function uiReducer(state = initialState, action) {
 
     case constants.OPEN_RIGHT_DRAWER:
       return Object.assign({}, state, {
-        rightDrawerIsOpen: true
+        drawer: {
+          context: state.drawer.context,
+          data: state.drawer.data,
+          open: true
+        }
       })
 
     case constants.CLOSE_RIGHT_DRAWER:
       return Object.assign({}, state, {
-        rightDrawerIsOpen: false
+        drawer: {
+          context: state.drawer.context,
+          data: state.drawer.data,
+          open: false
+        }
       })
 
     case constants.UPDATE_DRAWER_CONTEXT:
       return Object.assign({}, state, {
-        drawerContext: action.context
+        drawer: {
+          context: action.context,
+          data: action.data,
+          open: state.drawer.open
+        }
       })
 
 

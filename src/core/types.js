@@ -5,5 +5,6 @@ export default keyMirror({
   OPEN_RIGHT_DRAWER: null,
   CLOSE_RIGHT_DRAWER: null,
   UPDATE_DRAWER_CONTEXT: null,
-  PROMPT_COMPOSER: null
+  PROMPT_COMPOSER: null,
+  VERSIONS: null
 })
