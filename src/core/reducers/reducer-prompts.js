@@ -1,20 +1,17 @@
 import constants from 'core/types'
+import prompts from '../../data/prompts'
 
-const initialState = {
-  prompts: [
-    {
-      id: 1,
-      body: 'from redux',
-      marketCap: 1666
-    }
-  ]
-}
-
-function promptsReducer(state = initialState, action) {
+function promptsReducer(state = prompts, action) {
   switch (action.type) {
     case constants.ADD_PROMPT:
+      const newPrompt = {
+        id: state.prompts.length,
+        body: action.body,
+        marketCap: 666
+      }
+
       const newPrompts = state.prompts.slice()
-      newPrompts.push(action.prompt)
+      newPrompts.push(newPrompt)
 
       return Object.assign({}, state, {
         prompts: newPrompts

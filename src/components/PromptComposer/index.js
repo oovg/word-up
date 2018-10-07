@@ -1,38 +1,41 @@
-import { Button, TextField, Input } from '@material-ui/core'
+import { connect } from 'react-redux'
+import { TextField } from '@material-ui/core'
 import React, { Component } from 'react'
+import { addPrompt } from '../../core/actions/actions-prompts'
 import './styles.scss'
 
 class PromptComposer extends Component {
     state = {
-      value: '',
-      from: '',
-      to: ''
-  }
+      value: ''
+    }
+
+    onSubmit = () => {
+      this.props.addPrompt(this.state.value)
+
+      this.setState({
+        value: ''
+      })
+    }
 
     handleChange = (e) => {
       this.setState({ value: e.target.value })
     }
 
     render() {
-      const { onSubmit, ...props } = this.props
+      const { ...props } = this.props
       return (
         <div {...props} className="prompt-composer">
           <div className="form">
             <h3>Add a Prompt</h3>
-            <TextField value={this.state.value} label={'Type here'} onChange={this.handleChange} required />
-            <div className="payment--processor">
-              <div className="from">
-                <Input value={this.state.from} label={'Pay with'} onChange={this.handleChange} required />
-              </div>
-              <div className="to">
-                <Input value={this.state.to} label={'Receive'} onChange={this.handleChange} required />
-              </div>
-            </div>
-            <button className="button" variant="contained" onClick={onSubmit}>Create</button>
+            <TextField value={this.state.value} label="Type here" onChange={this.handleChange} required />
+            <button className="button" variant="contained" onClick={this.onSubmit}>Create</button>
           </div>
         </div>
       )
     }
 }
 
-export default PromptComposer
+export default connect(
+  null,
+  { addPrompt }
+)(PromptComposer)
