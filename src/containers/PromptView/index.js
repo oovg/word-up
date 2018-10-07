@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
+import Prompt from '../../components/Prompt'
 
-// import './styles.scss'
+import './styles.scss'
 
 class PromptView extends Component {
     render() {
         console.log(this.props.match.params)
-        return <p>hi</p>
+        return
+        <div className="">
+        hi
+        </div>
     }
 }
 

@@ -17,7 +17,7 @@ const Prompt = ({ data, ...props }) => (
       </div>
       <div className="body">
         <p>{data.body}</p>
-        <Link to={`/prompts/${data.id}`} class="button">Read more <MoreHoriz /></Link>
+        <Link to={`/prompts/${data.id}`} className="button">Read More <MoreHoriz /></Link>
       </div>
     </div>
   </div>
