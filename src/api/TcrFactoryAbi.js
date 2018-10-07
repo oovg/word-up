@@ -1,4 +1,4 @@
-export default [{
+const abi = [{
   constant: false, inputs: [{ name: '_spender', type: 'address' }, { name: '_value', type: 'uint256' }], name: 'approve', outputs: [{ name: '', type: 'bool' }], payable: false, stateMutability: 'nonpayable', type: 'function'
 }, {
   constant: true, inputs: [], name: 'totalSupply', outputs: [{ name: '', type: 'uint256' }], payable: false, stateMutability: 'view', type: 'function'
@@ -55,3 +55,5 @@ export default [{
 }, {
   constant: true, inputs: [{ name: 'hashId', type: 'bytes32' }], name: 'getContent', outputs: [{ name: 'content', type: 'bytes' }], payable: false, stateMutability: 'view', type: 'function'
 }]
+
+export default abi
