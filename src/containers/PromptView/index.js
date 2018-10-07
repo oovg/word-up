@@ -42,6 +42,9 @@ class PromptView extends Component {
           </button>
           <div className="contents">
             <h2>Buy this shit!</h2>
+            <div className="versions">
+              { this.versions() }
+            </div>
           </div>
         </Drawer>
         <AppBar />
@@ -62,6 +65,13 @@ class PromptView extends Component {
     return this.props.prompt.passages.map(passage => {
       return (
           <span onClick={this.toggleDrawer('right', true)}>{ passage.versions[0].body }</span>
+      )
+    })
+  }
+  versions() {
+    return this.props.prompt.passages[0].versions.map(version => {
+      return (
+          <div onClick={this.toggleDrawer('right', true)}>{ version.body }</div>
       )
     })
   }
