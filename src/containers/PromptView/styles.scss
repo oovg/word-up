@@ -37,3 +37,26 @@
     }
   }
 }
+
+.versions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  .version {
+    font-family: $prompt-font;
+    padding: 15px;
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-bottom: 1px solid #efefef;
+    p {
+      text-align: left;
+      flex-basis: 66%
+    }
+    .actions {
+      flex-basis: 34%;
+    }
+  }
+}

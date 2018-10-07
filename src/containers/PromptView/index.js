@@ -8,6 +8,8 @@ import './styles.scss'
 
 import { Drawer } from '@material-ui/core'
 import Close from '@material-ui/icons/Close'
+import ArrowDown from '@material-ui/icons/ArrowDownward'
+import ArrowUp from '@material-ui/icons/ArrowUpward'
 
 class PromptView extends Component {
   constructor(props) {
@@ -50,7 +52,16 @@ class PromptView extends Component {
     if (passage) {
       return passage.versions.map((version) => {
         return (
-          <div>{ version.body }</div>
+          <div className="version">
+            <p>{ version.body }</p>
+            <div className="actions">
+            <p className="market-cap">${version.marketCap}</p>
+            <div className="buy-sell">
+              <button className="button" onClick={this.toggleDrawer('right', true)}><ArrowUp /></button>
+              <a className="button"><ArrowDown /></a>
+            </div>
+          </div>
+        </div>
         )
       })
     }
