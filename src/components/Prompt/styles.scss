@@ -13,7 +13,7 @@
     background-color: $cream-dark;
   }
   .contents {
-    max-width: 800px;
+    max-width: 1200px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -21,16 +21,36 @@
     flex-direction: row;
     flex-wrap: wrap;
     .body {
-      font-family: $prompt-font;
-      font-size: 32px;
-      line-height: 1.5em;
+      display: flex;
+      flex-direction: column;
       flex-basis: 75%;
+      p {
+        font-family: $prompt-font;
+        font-size: 32px;
+        line-height: 1.5em;
+      }
     }
-    .actions {
-      flex-basis: 25%;
-    }
-    .read-more {
-      flex-basis: 100%;
+  }
+}
+
+.actions {
+  flex-basis: 25%;
+  flex-wrap: wrap;
+  display: flex;
+  .market-cap {
+    flex-basis: 100%;
+    font-size: 1.5em;
+  }
+  .buy-sell {
+    flex-basis: 100%;
+    .button {
+      display: inline-block;
+      border: 2px solid $ntv-action;
+      color: $ntv-action;
+      &:hover {
+        background-color: $ntv-action;
+        color: #fff;
+      }
     }
   }
 }

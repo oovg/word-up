@@ -1,5 +1,14 @@
 :local(.styles) {
   .app-bar {
-    background: $theme1;
+    background-color: #fff;
+    padding: 50px 25px;
+    display: flex;
+    justify-content: space-between;
+    .nav {
+      .nav-item {
+        display: inline-block;
+        margin-left: 25px;
+      }
+    }
   }
 }

@@ -68,9 +68,9 @@ class Header extends Component {
       <div className={styles}>
         <AppBar>
           <Toolbar>
-            <Typography variant="title" color="inherit">
-              Your Dapp Name
-            </Typography>
+            <h1>
+              wordUp
+            </h1>
             {menu}
           </Toolbar>
         </AppBar>

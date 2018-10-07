@@ -1,3 +1,20 @@
 :local(.styles) {
 
+
+
+}
+
+@import '../../global.scss';
+
+.toolbar {
+  width: calc(100% - 50px);
+  padding: 25px;
+  background-color: $cream-dark;
+  .contents {
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+  }
 }
