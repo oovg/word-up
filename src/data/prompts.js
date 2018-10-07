@@ -106,5 +106,32 @@ module.exports = [
         ]
       }
     ]
+  },
+  {
+    id: 4,
+    body: 'You just offered to sell your soul for Lucifer for a wish. But all he said was "I can\'t take what you don\'t have. You literally have no soul." before he disappeared.',
+    marketCap: 50.12,
+    passages: [
+      {
+        versions: [
+          {
+            body: 'He was downcast, all Sam wanted was to bring his dead wife back and he was willing to anything.',
+            marketCap: 4.23
+          },
+          {
+            body: '',
+            marketCap: 1.24
+          }
+        ]
+      },
+      {
+        versions: [
+          {
+            body: 'Upon hearing those words from the dark lord himself “I can’t take what you don’t have”....he decided to go back to his apartment and cry.',
+            marketCap: 2.10
+          }
+        ]
+      }
+    ]
   }
 ];
