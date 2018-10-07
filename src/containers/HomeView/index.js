@@ -12,10 +12,6 @@ import Close from '@material-ui/icons/Close'
 import './styles.scss'
 
 class HomeView extends Component {
-  constructor() {
-    super()
-  }
-
   state = {
     top: false,
     left: false,
