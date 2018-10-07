@@ -2,6 +2,8 @@ import { connect } from 'react-redux'
 import React, { Component } from 'react'
 import { Drawer } from '@material-ui/core'
 import Close from '@material-ui/icons/Close'
+import ArrowUp from '@material-ui/icons/ArrowUpward'
+import ArrowDown from '@material-ui/icons/ArrowDownward'
 import { MuiThemeProvider } from '@material-ui/core/styles'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import theme from 'configs/theme/config-theme'
@@ -15,11 +17,52 @@ import { closeRightDrawer } from '../../core/actions/actions-ui'
 import './styles.scss' // global styles
 
 class App extends Component {
+  versions(promptId, passageId) {
+    const prompt = this.props.prompts.find((prompt) => {
+      return prompt.id == promptId
+    })
+
+    const passage = prompt.passages[passageId]
+    if (passage) {
+      return passage.versions.map((version) => {
+        return (
+          <div className="version">
+            <p>{ version.body }</p>
+            <div className="actions">
+              <p className="market-cap">${version.marketCap}</p>
+              <div className="buy-sell">
+                <button className="button"><ArrowUp /></button>
+                <a className="button"><ArrowDown /></a>
+              </div>
+            </div>
+          </div>
+        )
+      })
+    }
+  }
+
+  versionsDrawer(promptId, passageId) {
+    return (
+      <div className="contents">
+        <h2>Buy this shit!</h2>
+        <div className="versions">
+          { this.versions(promptId, passageId) }
+        </div>
+      </div>
+    )
+  }
+
   element() {
-    if (this.props.drawerContext === constants.PROMPT_COMPOSER) {
+    const drawer = this.props.drawer
+
+    if (drawer.context === constants.PROMPT_COMPOSER) {
       return (
         <PromptComposer />
       )
+    }
+
+    if (drawer.context === constants.VERSIONS) {
+      return this.versionsDrawer(drawer.data.promptId, drawer.data.passageId)
     }
 
     return null
@@ -27,7 +70,7 @@ class App extends Component {
 
   drawer() {
     return (
-      <Drawer width="50%" className="drawer--prompt" anchor="right" open={this.props.drawerOpen} onClose={this.props.closeRightDrawer}>
+      <Drawer width="50%" className="drawer--prompt" anchor="right" open={this.props.drawer.open} onClose={this.props.closeRightDrawer}>
         <button
           className="button plain button--close"
           tabIndex={0}
@@ -60,8 +103,8 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    drawerOpen: state.ui.rightDrawerIsOpen,
-    drawerContext: state.ui.drawerContext
+    drawer: state.ui.drawer,
+    prompts: state.prompts
   }
 }
 

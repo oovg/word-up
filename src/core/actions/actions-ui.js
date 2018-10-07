@@ -38,9 +38,10 @@ export function closeRightDrawer() {
   }
 }
 
-export function updateDrawerContext(context) {
+export function updateDrawerContext(context, data) {
   return {
     type: constants.UPDATE_DRAWER_CONTEXT,
-    context
+    context,
+    data
   }
 }

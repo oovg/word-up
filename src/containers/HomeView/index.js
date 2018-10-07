@@ -13,7 +13,7 @@ import './styles.scss'
 class HomeView extends Component {
   openPromptComposer() {
     this.props.openRightDrawer()
-    this.props.updateDrawerContext(constants.PROMPT_COMPOSER)
+    this.props.updateDrawerContext(constants.PROMPT_COMPOSER, {})
   }
 
   render() {
