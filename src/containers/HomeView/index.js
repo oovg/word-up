@@ -28,21 +28,27 @@ class HomeView extends Component {
     })
   }
 
+  drawer() {
+    return (
+      <Drawer width="50%" className="drawer--prompt" anchor="right" open={this.state.drawerOpen} onClose={this.toggleDrawer}>
+        <button
+          className="button plain button--close"
+          tabIndex={0}
+          role="button"
+          onClick={this.toggleDrawer}
+          onKeyDown={this.toggleDrawer}
+        >
+          <Close />
+        </button>
+        <PromptComposer />
+      </Drawer>
+    )
+  }
+
   render() {
     return (
       <div>
-        <Drawer width="50%" className="drawer--prompt" anchor="right" open={this.state.drawerOpen} onClose={this.toggleDrawer}>
-          <button
-            className="button plain button--close"
-            tabIndex={0}
-            role="button"
-            onClick={this.toggleDrawer}
-            onKeyDown={this.toggleDrawer}
-          >
-            <Close />
-          </button>
-          <PromptComposer />
-        </Drawer>
+        { this.drawer() }
         <AppBar />
         <div className="toolbar">
           <div className="contents">
