@@ -2,7 +2,7 @@ import KeyboardArrowDown from '@material-ui/icons/KeyboardArrowDown'
 import KeyboardArrowUp from '@material-ui/icons/KeyboardArrowUp'
 import MoreHoriz from '@material-ui/icons/MoreHoriz'
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 import './styles.scss'
 
 const Prompt = ({ data, ...props }) => (
@@ -17,7 +17,7 @@ const Prompt = ({ data, ...props }) => (
       </div>
       <div className="body">
         <p>{data.body}</p>
-        <a className="button">Read more <MoreHoriz /></a>
+        <Link to={`/prompts/${data.id}`} class="button">Read more <MoreHoriz /></Link>
       </div>
     </div>
   </div>
