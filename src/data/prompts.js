@@ -9,7 +9,7 @@ module.exports = [
         versions:
         [
           {
-            body: 'Franklin Theodore James did not have much,',
+            body: 'Franklin Theodore James did not have much. Then one day a dwarven clan bought some terraforming equipment.,',
             marketCap: 420.69
           },
           {
