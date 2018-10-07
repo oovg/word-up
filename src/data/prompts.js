@@ -9,24 +9,24 @@ module.exports = [
         versions: [
           {
             body:
-              "Franklin Theodore James did not have much. Then one day a dwarven clan bought some terraforming equipment.,",
-            marketCap: 420.69
+              "Artificial grav fields were raised overnight.",
+            marketCap: 120.49
           },
           {
-            body: "I woke up and next to me I noticed a small rock. ",
-            marketCap: 420.65
+            body: "I woke up and next to me I noticed a small rock.",
+            marketCap: 0.65
           },
           {
             body:
-              "Jimmy sits on his bed, staring at his dinner. Roast beef and mashed potatoes slathered in gravy with a helping of corn on the side.",
-            marketCap: 420.6
+              "Gorlock sits on his bed, staring at his dinner. Roast beef and mashed potatoes slathered in gravy with a helping of corn on the side.",
+            marketCap: 0.24
           }
         ]
       },
       {
         versions: [
           {
-            body: "but he made the most of what he had.",
+            body: " Enormous chunks of the crust were raised into low earth orbit.",
             marketCap: 420.69
           },
           {
@@ -34,7 +34,7 @@ module.exports = [
             marketCap: 420.65
           },
           {
-            body: "His mom",
+            body: " His mom",
             marketCap: 420.6
           }
         ]
@@ -42,7 +42,7 @@ module.exports = [
       {
         versions: [
           {
-            body: " In a world",
+            body: " In a world like this,",
             marketCap: 420.69
           },
           {

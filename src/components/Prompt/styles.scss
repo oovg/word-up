@@ -58,7 +58,7 @@
       border: 2px solid $ntv-action;
       color: $ntv-action;
       background-color: transparent;
-      &:first-of-type {
+      &:nth-of-type(2) {
         margin-left: 15px;
       }
       &:hover {

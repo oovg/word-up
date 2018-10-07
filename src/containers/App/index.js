@@ -59,9 +59,9 @@ class App extends Component {
 
   versionsDrawer(promptId, passageId) {
     return (
-      <div className="contents">
-      <a><Add /> Add a Version</a>
-        <h2>Stake a passage version.</h2>
+      <div className="contents version-list">
+        <a className=""><Add /> Add a New Version</a>
+        <h2>Stake a Version of the Passage.</h2>
         <div className="versions">
           { this.versions(promptId, passageId) }
         </div>

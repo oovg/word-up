@@ -112,3 +112,24 @@ a {
     margin-top: 25px;
   }
 }
+
+// Inputs
+
+.version-list {
+  align-items: flex-end;
+  a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 25px 0px;
+  }
+}
+
+.form {
+  input {
+    width: 420px;
+  }
+  .button {
+    margin-top: 25px;
+  }
+}
