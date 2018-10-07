@@ -15,6 +15,21 @@ class TcrFactory {
       }
     )
   }
+  tcrList(){
+    TcrListText = "";
+    var events = TcrFactory.TcrCreated({fromBlock: 0, toBlock: 'latest'});
+    events.get(function(err, result)
+    {
+        //console.log("Events that matched: ",JSON.stringify(result));
+        //console.log("Events that matched: ",result[0].args);
+        for (i = 0; i < result.length; i++) {
+        TcrListText += JSON.stringify(result[i].args);
+    }
+        // Iterate through events or do whatever you want with the resulting array
+    });
+    });
+    return TcrListText;
+  };
 }
 
 export default TcrFactory
