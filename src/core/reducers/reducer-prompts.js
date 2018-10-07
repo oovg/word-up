@@ -14,6 +14,24 @@ function promptsReducer(state = prompts, action) {
       newPrompts.push(newPrompt)
 
       return newPrompts
+
+    case constants.ADD_PASSAGE:
+      const prompt = state.prompt.find(
+        prompt => {
+          return prompt.id == action.promptId
+        }
+      )
+
+     const newPassages = prompt.passages.slice()
+     const newVersion = {
+       body: action.body,
+       marketCap: 678
+     }
+
+     newPassages.push({versions: [body: action.body]})
+     return 
+
+
     default:
       return state
   }

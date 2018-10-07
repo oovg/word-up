@@ -2,6 +2,7 @@ import { connect } from 'react-redux'
 import React, { Component } from 'react'
 import { Drawer } from '@material-ui/core'
 import Close from '@material-ui/icons/Close'
+import Add from '@material-ui/icons/Add'
 import ArrowUp from '@material-ui/icons/ArrowUpward'
 import ArrowDown from '@material-ui/icons/ArrowDownward'
 import { MuiThemeProvider } from '@material-ui/core/styles'
@@ -59,6 +60,7 @@ class App extends Component {
   versionsDrawer(promptId, passageId) {
     return (
       <div className="contents">
+      <a><Add /> Add a Version</a>
         <h2>Stake a passage version.</h2>
         <div className="versions">
           { this.versions(promptId, passageId) }

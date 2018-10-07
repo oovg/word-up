@@ -60,30 +60,6 @@ module.exports = [
     ]
   },
   {
-    id: 2,
-    body:
-      "The dwarven race was known for it's large, elaborate works of art. As technology advanced they got bigger and more elaborate. Then one day a dwarven clan bought some terraforming equipment.",
-    marketCap: 323.31,
-    passages: [
-      {
-        versions: [
-          {
-            body: "I",
-            marketCap: 420.69
-          },
-          {
-            body: "love",
-            marketCap: 420.65
-          },
-          {
-            body: "you",
-            marketCap: 420.6
-          }
-        ]
-      }
-    ]
-  },
-  {
     id: 3,
     body:
       'An old man walks alone, inside the crumbling remains of an old colony ship. When he reaches the bridge, a small ball of light emerges from the ship\'s console. "Hello Captain", says the ship\'s A.I. "It\'s nice to see you again."',
