@@ -7,6 +7,8 @@ import AppBar from '../../components/AppBar'
 import Api from '../../api/api'
 import { addPrompt } from '../../core/actions/actions-prompts'
 import Add from '@material-ui/icons/Add'
+import Close from '@material-ui/icons/Close'
+
 import './styles.scss'
 
 class HomeView extends Component {
@@ -31,12 +33,15 @@ class HomeView extends Component {
     return (
       <div>
         <Drawer width="50%" containerClassName="drawer--party" className="drawer--prompt" anchor="right" open={this.state.right} onClose={this.toggleDrawer('right', false)}>
-          <div
+          <button
+            className="button button--close"
             tabIndex={0}
             role="button"
             onClick={this.toggleDrawer('right', false)}
             onKeyDown={this.toggleDrawer('right', false)}
-          />
+          >
+            <Close />
+          </button>
           <PromptComposer />
         </Drawer>
         <AppBar />

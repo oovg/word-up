@@ -47,6 +47,9 @@
       display: inline-block;
       border: 2px solid $ntv-action;
       color: $ntv-action;
+      &:first-of-type {
+        margin-right: 15px;
+      }
       &:hover {
         background-color: $ntv-action;
         color: #fff;
