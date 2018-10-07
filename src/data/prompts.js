@@ -15,11 +15,11 @@ module.exports = {
                 marketCap: 420.69
               },
               {
-                body: 'love',
+                body: ' love',
                 marketCap: 420.65
               },
               {
-                body: 'you',
+                body: ' you.',
                 marketCap: 420.60
               }
             ]
@@ -35,6 +35,14 @@ module.exports = {
           {
             body: 'I',
             marketCap: 420.69
+          },
+          {
+            body: 'love',
+            marketCap: 420.65
+          },
+          {
+            body: 'you',
+            marketCap: 420.60
           }
         ]
       }
