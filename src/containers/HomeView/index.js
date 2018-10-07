@@ -7,7 +7,7 @@ import PromptList from '../../components/PromptList'
 import AppBar from '../../components/AppBar'
 import { addPrompt } from '../../core/actions/actions-prompts'
 import { openRightDrawer, updateDrawerContext } from '../../core/actions/actions-ui'
-import TcrFactory from '../../api/TcrFactory'
+// import TcrFactory from '../../api/TcrFactory'
 
 import './styles.scss'
 

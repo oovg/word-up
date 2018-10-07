@@ -1,14 +1,5 @@
 import Prompt from './prompt'
 import Version from './version'
-import getFactory from './TcrFactory'
-
-const addr = '0x4C81332D5919Da41C29eC44B0B377D9d02E34029'
-const contractAddress = '0x3E0AA8a75EDd643CBca2F5cD54B2f771D536AFB6'
-
-const factory = getFactory(addr, contractAddress)
-
-const ret = factory.createTCR('content', 2, '0x08cd0c6dc1ff4614053dca4a4a6aa39655d19b32', 55, { from: '0xd66e018cc12b0e35dc1abf0991cef06a6bd295b9', gas: 3000000 })
-console.log('ret: ', ret)
 
 const bytes = new Uint8Array([8, 1, 18, 11, 72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100])
 const verBytes = Version.sampleBytes()
