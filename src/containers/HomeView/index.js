@@ -42,8 +42,10 @@ class HomeView extends Component {
         </Drawer>
         <AppBar />
         <div className="toolbar">
-          <p>Viewing Prompts</p>
-          <button className="button" onClick={this.toggleDrawer('right', true)}><Add /> Add A Prompt</button>
+          <div className="contents">
+            <p>Viewing Prompts</p>
+            <button className="button" onClick={this.toggleDrawer('right', true)}><Add /> Add A Prompt</button>
+          </div>
         </div>
         <div className="prompts">
           <PromptList prompts={this.api.prompts()} />

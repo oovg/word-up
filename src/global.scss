@@ -51,6 +51,7 @@ a {
   justify-content: space-between;
   cursor: pointer;
   transition: all .15s linear;
+  outline: none;
   &:hover {
     color: #fff;
     background-color: $od-light-purple;
