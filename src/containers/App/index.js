@@ -12,11 +12,25 @@ import PromptView from 'containers/PromptView'
 
 import constants from 'core/types'
 import PromptComposer from '../../components/PromptComposer'
-import { closeRightDrawer } from '../../core/actions/actions-ui'
+import GetShares from '../../components/GetShares'
+import SellShares from '../../components/SellShares'
+import { closeRightDrawer, openRightDrawer, updateDrawerContext } from '../../core/actions/actions-ui'
 
 import './styles.scss' // global styles
 
 class App extends Component {
+
+  openGetShares() {
+    this.props.openRightDrawer()
+    this.props.updateDrawerContext(constants.GET_SHARES, {})
+  }
+
+  openSellShares() {
+    this.props.openRightDrawer()
+    this.props.updateDrawerContext(constants.SELL_SHARES, {})
+  }
+
+
   versions(promptId, passageId) {
     const prompt = this.props.prompts.find((prompt) => {
       return prompt.id == promptId
@@ -31,8 +45,8 @@ class App extends Component {
             <div className="actions">
               <p className="market-cap">${version.marketCap}</p>
               <div className="buy-sell">
-                <button className="button"><ArrowUp /></button>
-                <a className="button"><ArrowDown /></a>
+              <button className="button" onClick={this.openGetShares.bind(this)}><ArrowUp /></button>
+              <button className="button" onClick={this.openSellShares.bind(this)}><ArrowDown /></button>
               </div>
             </div>
           </div>
@@ -58,6 +72,18 @@ class App extends Component {
     if (drawer.context === constants.PROMPT_COMPOSER) {
       return (
         <PromptComposer />
+      )
+    }
+
+    if (drawer.context === constants.GET_SHARES) {
+      return (
+        <GetShares />
+      )
+    }
+
+    if (drawer.context === constants.SELL_SHARES) {
+      return (
+        <SellShares />
       )
     }
 
@@ -108,4 +134,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { closeRightDrawer })(App)
+export default connect(mapStateToProps, { closeRightDrawer, openRightDrawer, updateDrawerContext })(App)

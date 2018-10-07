@@ -11,6 +11,7 @@ import { openRightDrawer, updateDrawerContext } from '../../core/actions/actions
 import './styles.scss'
 
 class HomeView extends Component {
+
   openPromptComposer() {
     this.props.openRightDrawer()
     this.props.updateDrawerContext(constants.PROMPT_COMPOSER, {})
