@@ -14,6 +14,9 @@ function web3Reducer(state, action) {
         ...state,
         ethAddress: action.address
       };
+
+      default:
+        return state
   }
 }
 

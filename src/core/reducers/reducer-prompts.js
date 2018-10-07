@@ -20,20 +20,3 @@ function promptsReducer(state = [], action) {
 }
 
 export default promptsReducer
-
-// In your reducer:
-function reducer(state, action) {
-  switch (action.type) {
-    case 'web3/RECEIVE_ACCOUNT':
-      return {
-        ...state,
-        ethAddress: action.address
-      }
-
-    case 'web3/CHANGE_ACCOUNT':
-      return {
-        ...state,
-        ethAddress: action.address
-      }
-  }
-}
