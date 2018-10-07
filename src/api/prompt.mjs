@@ -24,6 +24,19 @@ class Prompt {
   //   return bytes
   // }
 
+  static serialize(id, body) {
+    const payload = { id, body }
+
+    const err = Buff.verify(payload)
+    if (err) {
+      throw Error(err)
+    }
+
+    const message = Buff.create(payload)
+    const buffer = Buff.encode(message).finish()
+    return new Uint8Array(buffer)
+  }
+
   static fromTcr(tcr) {
     try {
       const decoded = Prompt.decode(tcr.blob)

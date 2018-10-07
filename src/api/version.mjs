@@ -18,6 +18,19 @@ class Version {
     }
   }
 
+  static serialize(promptId, body, passageNumber) {
+    const payload = { promptId, body, passageNumber }
+
+    const err = Buff.verify(payload)
+    if (err) {
+      throw Error(err)
+    }
+
+    const message = Buff.create(payload)
+    const buffer = Buff.encode(message).finish()
+    return new Uint8Array(buffer)
+  }
+
   static sampleBytes() {
     const data = { promptId: 1, body: 'Im a version', passageNumber: 3 }
     console.log('Verify: ', Buff.verify(data))
