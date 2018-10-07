@@ -6,8 +6,6 @@ import { Link } from 'react-router-dom'
 import './styles.scss'
 
 const Prompt = ({ data, ...props }) => {
-
-  console.log(data)
   return (
     <div>
       <div className="prompt" {...props}>
