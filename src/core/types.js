@@ -2,6 +2,7 @@ import keyMirror from 'keymirror'
 
 export default keyMirror({
   ADD_PROMPT: null,
+  ADD_PASSAGE: null,
   OPEN_RIGHT_DRAWER: null,
   CLOSE_RIGHT_DRAWER: null,
   UPDATE_DRAWER_CONTEXT: null,

@@ -8,9 +8,11 @@ export function addPrompt(body) {
 }
 
 
-export function addPassage(body) {
+export function addPassage(body, promptId, passageNumber) {
   return {
     type: constants.ADD_PASSAGE,
-    body
+    body,
+    promptId,
+    passageNumber
   }
 }
