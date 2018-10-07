@@ -1,5 +1,5 @@
-import KeyboardArrowDown from '@material-ui/icons/KeyboardArrowDown'
-import KeyboardArrowUp from '@material-ui/icons/KeyboardArrowUp'
+import ArrowDown from '@material-ui/icons/ArrowDownward'
+import ArrowUp from '@material-ui/icons/ArrowUpward'
 import MoreHoriz from '@material-ui/icons/MoreHoriz'
 import Close from '@material-ui/icons/Close'
 import React from 'react'
@@ -44,15 +44,19 @@ class Prompt extends React.Component {
           <div className="contents">
             <div className="body">
               <p>{this.props.data.body}</p>
-              <Link to={`/prompts/${this.props.data.id}`} className="button">Read More <MoreHoriz /></Link>
             </div>
             <div className="actions">
               <p className="market-cap">${this.props.data.marketCap}</p>
               <div className="buy-sell">
-                <button className="button" onClick={this.toggleDrawer('right', true)}><KeyboardArrowUp /></button>
-                <a className="button"><KeyboardArrowDown /></a>
+                <button className="button" onClick={this.toggleDrawer('right', true)}><ArrowUp /></button>
+                <a className="button"><ArrowDown /></a>
+              </div>
+              <div className="read-more">
+              <Link to={`/prompts/${this.props.data.id}`} className="button">Read More <MoreHoriz /></Link>
               </div>
             </div>
+
+
           </div>
         </div>
     )

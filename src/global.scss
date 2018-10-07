@@ -59,7 +59,7 @@ a {
     color: #fff;
     background-color: $od-light-purple;
   }
-  &.plain {
+  &.plain, .plain:hover {
     border: none;
     background-color: none !important;
   }
