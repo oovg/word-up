@@ -21,22 +21,9 @@ class Prompt extends React.Component {
               <p>{this.props.data.body}</p>
               <Link to={`/prompts/${this.props.data.id}`} className="button">Read More <MoreHoriz /></Link>
             </div>
-            <div className="passages">
-              { this.passages() }
-            </div>
           </div>
         </div>
     )
-  }
-
-  passages() {
-    return this.props.data.passages.map(passage => {
-      return (
-        <div className="passage">
-          { passage.body }
-        </div>
-      )
-    })
   }
 }
 

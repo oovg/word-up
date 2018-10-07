@@ -12,8 +12,21 @@ class PromptView extends Component {
       <Fragment>
         <AppBar />
         <Prompt data={this.props.prompt} />
+        <div className="passages">
+          { this.passages() }
+        </div>
+
       </Fragment>
     )
+  }
+  passages() {
+    return this.props.prompt.passages.map(passage => {
+      return (
+        <div className="passage">
+          <p>{ passage.body }</p>
+        </div>
+      )
+    })
   }
 }
 
