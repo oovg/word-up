@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import AppBar from '../../components/AppBar'
 import Prompt from '../../components/Prompt'
-// import './styles.scss'
+
+import './styles.scss'
 
 class PromptView extends Component {
     componentDidMount() {
