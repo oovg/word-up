@@ -8,7 +8,6 @@ import theme from 'configs/theme/config-theme'
 import HomeView from 'containers/HomeView'
 import PromptView from 'containers/PromptView'
 
-
 import constants from 'core/types'
 import PromptComposer from '../../components/PromptComposer'
 import { closeRightDrawer } from '../../core/actions/actions-ui'
