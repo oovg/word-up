@@ -5,7 +5,7 @@ import Prompt from '../../components/Prompt'
 
 class PromptView extends Component {
     componentDidMount() {
-
+        // TODO: Fetch prompt object using this.props.match.params.id
     }
 
     render() {
