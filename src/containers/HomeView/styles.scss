@@ -9,12 +9,13 @@
 .toolbar {
   width: calc(100% - 50px);
   padding: 25px;
-  background-color: $cream-dark;
+  background-color: #fff;
   .contents {
     max-width: 1200px;
     margin: 0 auto;
     flex-direction: row;
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 }
