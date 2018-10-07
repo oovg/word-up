@@ -1,7 +1,7 @@
 import constants from 'core/types'
-// import prompts from '../../data/prompts'
+import prompts from '../../data/prompts'
 
-function promptsReducer(state = [], action) {
+function promptsReducer(state = prompts, action) {
   switch (action.type) {
     case constants.ADD_PROMPT:
       const newPrompt = {
