@@ -55,11 +55,7 @@ class HomeView extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    prompts: state.prompts.prompts
-  }
-}
+const mapStateToProps = state => ({ prompts: state.prompts })
 
 export default connect(
   mapStateToProps,

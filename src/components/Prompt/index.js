@@ -8,7 +8,6 @@ import './styles.scss'
 class Prompt extends React.Component {
   render() {
     return (
-      <div>
         <div className="prompt">
           <div className="contents">
             <div className="actions">
@@ -27,7 +26,6 @@ class Prompt extends React.Component {
             </div>
           </div>
         </div>
-      </div>
     )
   }
 
