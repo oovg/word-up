@@ -2,6 +2,7 @@ import { connect } from 'react-redux'
 import { TextField } from '@material-ui/core'
 import React, { Component } from 'react'
 import { addPrompt } from '../../core/actions/actions-prompts'
+import { closeRightDrawer } from '../../core/actions/actions-ui'
 import './styles.scss'
 
 class PromptComposer extends Component {
@@ -15,6 +16,8 @@ class PromptComposer extends Component {
       this.setState({
         value: ''
       })
+
+      this.props.closeRightDrawer()
     }
 
     handleChange = (e) => {
@@ -37,5 +40,5 @@ class PromptComposer extends Component {
 
 export default connect(
   null,
-  { addPrompt }
+  { addPrompt, closeRightDrawer }
 )(PromptComposer)

@@ -18,11 +18,13 @@ class PromptView extends Component {
   }
 
   passages() {
-    return this.props.prompt.passages.map((passage, i) => {
-      return (
-        <span onClick={this.toggleDrawer(i)}>{ passage.versions[0].body }</span>
-      )
-    })
+    if (this.props.prompt && this.props.passages) {
+      return this.props.prompt.passages.map((passage, i) => {
+        return (
+          <span onClick={this.toggleDrawer(i)}>{ passage.versions[0].body }</span>
+        )
+      })
+    }
   }
 
   render() {

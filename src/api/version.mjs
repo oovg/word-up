@@ -11,7 +11,7 @@ class Version {
   static fromTcr(tcr) {
     try {
       const decoded = Version.decode(tcr.blob)
-      return new Version(decoded.promptId, decoded.body, tcr.ledger)
+      return new Version(decoded.promptId, decoded.body, decoded.passageNumber, tcr.ledger)
     } catch (e) {
       console.log('Failed decoding version: ', e)
       return null

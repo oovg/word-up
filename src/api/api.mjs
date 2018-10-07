@@ -26,13 +26,15 @@ const mockTcrs = [
   {
     erc20: '0x1234',
     ratio: 500000,
-    blob: verBytes
+    blob: verBytes,
+    ledger: {
+      '0xaaa': 44
+    }
   }
 ]
 
 const WORD_UP_RATIO = 500000
 const WORD_UP_ERC20 = '0x1234'
-
 
 function injestTcrs(tcrs) {
   const injested = {

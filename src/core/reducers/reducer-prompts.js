@@ -1,21 +1,19 @@
 import constants from 'core/types'
-import prompts from '../../data/prompts'
+// import prompts from '../../data/prompts'
 
-function promptsReducer(state = prompts, action) {
+function promptsReducer(state = [], action) {
   switch (action.type) {
     case constants.ADD_PROMPT:
       const newPrompt = {
-        id: state.prompts.length,
+        id: state.length,
         body: action.body,
         marketCap: 666
       }
 
-      const newPrompts = state.prompts.slice()
+      const newPrompts = state.slice()
       newPrompts.push(newPrompt)
 
-      return Object.assign({}, state, {
-        prompts: newPrompts
-      })
+      return newPrompts
     default:
       return state
   }
@@ -25,17 +23,17 @@ export default promptsReducer
 
 // In your reducer:
 function reducer(state, action) {
-  switch(action.type) {
+  switch (action.type) {
     case 'web3/RECEIVE_ACCOUNT':
       return {
         ...state,
         ethAddress: action.address
-      };
+      }
 
     case 'web3/CHANGE_ACCOUNT':
       return {
         ...state,
         ethAddress: action.address
-      };
+      }
   }
 }
