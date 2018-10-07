@@ -8,12 +8,33 @@ import './styles.scss'
 class PromptView extends Component {
   render() {
     console.log(this.props.match.params)
+    console.log(this.props.prompt.passages)
     return (
       <Fragment>
         <AppBar />
         <Prompt data={this.props.prompt} />
+        <div className="passages--container">
+          <div className="contents">
+            <div className="spacer"><p></p></div>
+            <div className="passages">
+              { this.passages() }
+            </div>
+          </div>
+        </div>
+
       </Fragment>
     )
+  }
+  passages() {
+    return this.props.prompt.passages.map(passage => {
+      return (
+        <div className="passage">
+          <a className="button">
+            <span>{ passage.versions[0].body }</span>
+          </a>
+        </div>
+      )
+    })
   }
 }
 
