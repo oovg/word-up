@@ -30,7 +30,7 @@ class HomeView extends Component {
       <div>
         <Drawer width="50%" containerClassName="drawer--party" className="drawer--prompt" anchor="right" open={this.state.right} onClose={this.toggleDrawer('right', false)}>
           <button
-            className="button button--close"
+            className="button plain button--close"
             tabIndex={0}
             role="button"
             onClick={this.toggleDrawer('right', false)}
@@ -55,11 +55,7 @@ class HomeView extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    prompts: state.prompts.prompts
-  }
-}
+const mapStateToProps = state => ({ prompts: state.prompts })
 
 export default connect(
   mapStateToProps,

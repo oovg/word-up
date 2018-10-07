@@ -5,22 +5,31 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './styles.scss'
 
-const Prompt = ({ data, ...props }) => (
-  <div className="prompt" {...props}>
-    <div className="contents">
-      <div className="actions">
-        <p className="market-cap">${data.marketCap}</p>
-        <div className="buy-sell">
-          <a className="button"><KeyboardArrowUp /></a>
-          <a className="button"><KeyboardArrowDown /></a>
+const Prompt = ({ data, ...props }) => {
+
+  console.log(data)
+  return (
+    <div>
+      <div className="prompt" {...props}>
+        <div className="contents">
+          <div className="actions">
+            <p className="market-cap">${data.marketCap}</p>
+            <div className="buy-sell">
+              <a className="button"><KeyboardArrowUp /></a>
+              <a className="button"><KeyboardArrowDown /></a>
+            </div>
+          </div>
+          <div className="body">
+            <p>{data.body}</p>
+            <Link to={`/prompts/${data.id}`} className="button">Read More <MoreHoriz /></Link>
+          </div>
+          <div className="passages">
+            { data.passages[0].body }
+          </div>
         </div>
       </div>
-      <div className="body">
-        <p>{data.body}</p>
-        <Link to={`/prompts/${data.id}`} className="button">Read More <MoreHoriz /></Link>
-      </div>
     </div>
-  </div>
-)
+  )
+}
 
 export default Prompt

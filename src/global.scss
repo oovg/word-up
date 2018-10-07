@@ -56,6 +56,13 @@ a {
     color: #fff;
     background-color: $od-light-purple;
   }
+  &.plain {
+    border: none;
+    background-color: none !important;
+  }
+  &.button--close {
+    float: right;
+  }
 }
 
 // Drawer overrides
