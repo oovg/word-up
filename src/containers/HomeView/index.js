@@ -7,20 +7,27 @@ import PromptList from '../../components/PromptList'
 import AppBar from '../../components/AppBar'
 import { addPrompt } from '../../core/actions/actions-prompts'
 import { openRightDrawer, updateDrawerContext } from '../../core/actions/actions-ui'
-// import TcrFactory from '../../api/TcrFactory'
+import TcrFactory from '../../api/TcrFactory'
 
 import './styles.scss'
 
 class HomeView extends Component {
-  // constructor(props) {
-  //   super(props)
-  //   const account = '0x811f2781f44341e55a96d59089dc306a5a63d887'
-  //   const contractAddr = '0x50f49227cee1a24a4431c02d3e394575b4dDF10a'
-  //   const erc20Addr = '0x3e0aa8a75edd643cbca2f5cd54b2f771d536afb6'
-  //   const factory = new TcrFactory(web3, account, contractAddr)
-  //
-  //   factory.createTCR('content', 2, erc20Addr, 0)
-  // }
+  constructor(props) {
+    super(props)
+    const account = '0xd66e018cc12b0e35dc1abf0991cef06a6bd295b9'
+    const contractAddr = '0x73f24e09486db7e69705f465832be91b13e67917'
+    const erc20Addr = '0x08cd0c6dc1ff4614053dca4a4a6aa39655d19b32'
+    const factory = TcrFactory(web3, account, contractAddr)
+
+    factory.createTCR('content', 2, erc20Addr, 0, { from: account, gas: 3000000 }, (error, transactionHash) => {
+      console.log('transactionHash: ', transactionHash)
+      console.log('error: ', error)
+
+      listoftcrs = factory.tcrList()
+      console.log(listoftcrs)
+    })
+  }
+
 
   openPromptComposer() {
     this.props.openRightDrawer()
