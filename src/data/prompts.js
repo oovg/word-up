@@ -8,26 +8,45 @@ module.exports = {
         passages:
         [
           {
-            body: 'What happened next, ',
+            order: 1,
+            versions: [
+              {
+                body: 'What happened next,'
+                marketCap: 420.69
+              },
+              {
+                body: 'lorem ipsum',
+                marketCap: 420.68
+              },
+              {
+                body: 'consectar,',
+                marketCap: 420.67
+              },
+            ]
           },
           {
-            body: 'would change everything.',
+            order: 2,
+            versions: [
+              {
+                body: 'would change everything.'
+                marketCap: 420.69
+              },
+              {
+                body: 'lorem ipsum',
+                marketCap: 420.69
+              },
+              {
+                body: 'consectar,',
+                marketCap: 420.69
+              },
+            ]
           }
         ]
       },
       {
         id: 2,
         body: 'my pet rock',
-        marketCap: 8452.397,
-        passages:
-        [
-          {
-            body: 'What happened next, ',
-          },
-          {
-            body: 'would change everything.',
-          }
-        ]
+        marketCap: 8452.397
       }
     ]
 }

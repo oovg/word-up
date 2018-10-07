@@ -1,23 +1,22 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
+import AppBar from '../../components/AppBar'
 import Prompt from '../../components/Prompt'
 
 import './styles.scss'
 
 class PromptView extends Component {
+    componentDidMount() {
+        // TODO: Fetch prompt object using this.props.match.params.id
+    }
+
     render() {
         console.log(this.props.match.params)
-        return
-        <div>
-          <div className="prompt--container">
-            <p>hi</p>
-          </div>
-          <div className="passages--container">
-           <div className="passages">
-             <div className="passage">
-             </div>
-           </div>
-          </div>
-        </div>
+        return (
+            <Fragment>
+                <AppBar />
+                <Prompt />
+            </Fragment>
+        )
     }
 }
 
