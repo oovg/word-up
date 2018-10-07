@@ -2,6 +2,7 @@ import React                   from 'react'
 import PropTypes               from 'prop-types'
 import { AppBar as MuiAppBar } from '@material-ui/core'
 import { styles }              from './styles.scss'
+import { Link } from 'react-router-dom'
 
 const AppBar = (props) => {
   const { children } = props
@@ -11,8 +12,8 @@ const AppBar = (props) => {
       <div className="app-bar">
         <h1>wordUp</h1>
         <div className="nav">
-          <a className="nav-item">Prompts</a>
-          <a className="nav-item">Dashboard</a>
+          <Link to="/" className="nav-item">Prompts</Link>
+          <Link to="/" className="nav-item">Dashboard</Link>
         </div>
       </div>
     </div>
