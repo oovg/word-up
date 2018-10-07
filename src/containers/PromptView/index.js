@@ -13,8 +13,8 @@ class PromptView extends Component {
         console.log(this.props.match.params)
         return (
             <Fragment>
-                <AppBar />
-                <Prompt />
+              <AppBar />
+              <Prompt />
             </Fragment>
         )
     }
