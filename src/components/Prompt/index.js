@@ -7,7 +7,7 @@ import './styles.scss'
 const Prompt = ({ data, ...props }) => (
   <div className="prompt" {...props}>
     <div className="contents">
-      <div clasName="actions">
+      <div className="actions">
         <span>{data.marketCap}</span>
         <KeyboardArrowUp />
         <KeyboardArrowDown />

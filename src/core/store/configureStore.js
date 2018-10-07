@@ -11,7 +11,11 @@ export default function configureStore(initialState) {
   })
 
   const middleware = applyMiddleware(thunk, logger)
-  const store = middleware(createStore)(rootReducer, initialState)
+  const store = middleware(createStore)(
+    rootReducer,
+    initialState,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers

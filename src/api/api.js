@@ -6,13 +6,22 @@ class Api {
 
   }
 
+  // Public Functions
   balance() {
-    return 100
+    return this.user.balance
   }
 
-  prompts() {
-    return mockPrompts
+  addPrompt(body, spend) {
+    this._prompts.push({
+      id: this._prompts.length,
+      body,
+      marketCap: 1234
+    })
+
+    this.prompts = this._prompts
   }
+
+  // Private Functions
 }
 
 export default Api
