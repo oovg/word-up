@@ -12,26 +12,32 @@ import Close from '@material-ui/icons/Close'
 import './styles.scss'
 
 class HomeView extends Component {
-  state = {
-    right: false
-  };
+  constructor(props) {
+    super(props)
+    this.state = {
+      drawerOpen: false
+    }
 
-  toggleDrawer = (side, open) => () => {
+    this.toggleDrawer = this.toggleDrawer.bind(this)
+  }
+
+
+  toggleDrawer() {
     this.setState({
-      [side]: open
+      drawerOpen: !this.state.drawerOpen
     })
-  };
+  }
 
   render() {
     return (
       <div>
-        <Drawer width="50%" className="drawer--prompt" anchor="right" open={this.state.right} onClose={this.toggleDrawer('right', false)}>
+        <Drawer width="50%" className="drawer--prompt" anchor="right" open={this.state.drawerOpen} onClose={this.toggleDrawer}>
           <button
             className="button plain button--close"
             tabIndex={0}
             role="button"
-            onClick={this.toggleDrawer('right', false)}
-            onKeyDown={this.toggleDrawer('right', false)}
+            onClick={this.toggleDrawer}
+            onKeyDown={this.toggleDrawer}
           >
             <Close />
           </button>
@@ -41,7 +47,7 @@ class HomeView extends Component {
         <div className="toolbar">
           <div className="contents">
             <h2>Viewing Prompts</h2>
-            <button className="button" onClick={this.toggleDrawer('right', true)}><Add /> Add A Prompt</button>
+            <button className="button" onClick={this.toggleDrawer}><Add /> Add A Prompt</button>
           </div>
         </div>
         <div className="prompts">
