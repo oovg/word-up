@@ -89,7 +89,7 @@ class PromptView extends Component {
         </Drawer>
 
         <AppBar />
-        <Prompt data={this.props.prompt} />
+        <Prompt data={this.props.prompt} hideReadMore />
         <div className="passages--container">
           <div className="contents">
             <div className="passages">

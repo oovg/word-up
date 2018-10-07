@@ -8,7 +8,6 @@ import './styles.scss'
 import { Drawer } from '@material-ui/core'
 
 class Prompt extends React.Component {
-
   state = {
     top: false,
     left: false,
@@ -22,43 +21,47 @@ class Prompt extends React.Component {
     })
   };
 
+  renderReadMore() {
+    if (!this.props.hideReadMore) {
+      return (
+        <div className="read-more">
+          <Link to={`/prompts/${this.props.data.id}`} className="button">Read More <MoreHoriz /></Link>
+        </div>
+      )
+    }
+  }
 
   render() {
     return (
-
-        <div className="prompt">
-          <Drawer width="50%" className="drawer--prompt" anchor="right" open={this.state.right} onClose={this.toggleDrawer('right', false)}>
-            <button
-              className="button plain button--close"
-              tabIndex={0}
-              role="button"
-              onClick={this.toggleDrawer('right', false)}
-              onKeyDown={this.toggleDrawer('right', false)}
-            >
-              <Close />
-            </button>
-            <div className="contents">
-              <h2>Buy this shit!</h2>
-            </div>
-          </Drawer>
+      <div className="prompt">
+        <Drawer width="50%" className="drawer--prompt" anchor="right" open={this.state.right} onClose={this.toggleDrawer('right', false)}>
+          <button
+            className="button plain button--close"
+            tabIndex={0}
+            role="button"
+            onClick={this.toggleDrawer('right', false)}
+            onKeyDown={this.toggleDrawer('right', false)}
+          >
+            <Close />
+          </button>
           <div className="contents">
-            <div className="body">
-              <p>{this.props.data.body}</p>
+            <h2>Buy this shit!</h2>
+          </div>
+        </Drawer>
+        <div className="contents">
+          <div className="body">
+            <p>{this.props.data.body}</p>
+          </div>
+          <div className="actions">
+            <p className="market-cap">${this.props.data.marketCap}</p>
+            <div className="buy-sell">
+              <button className="button" onClick={this.toggleDrawer('right', true)}><ArrowUp /></button>
+              <a className="button"><ArrowDown /></a>
             </div>
-            <div className="actions">
-              <p className="market-cap">${this.props.data.marketCap}</p>
-              <div className="buy-sell">
-                <button className="button" onClick={this.toggleDrawer('right', true)}><ArrowUp /></button>
-                <a className="button"><ArrowDown /></a>
-              </div>
-              <div className="read-more">
-              <Link to={`/prompts/${this.props.data.id}`} className="button">Read More <MoreHoriz /></Link>
-              </div>
-            </div>
-
-
+            { this.renderReadMore() }
           </div>
         </div>
+      </div>
     )
   }
 }
