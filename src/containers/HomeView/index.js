@@ -13,9 +13,6 @@ import './styles.scss'
 
 class HomeView extends Component {
   state = {
-    top: false,
-    left: false,
-    bottom: false,
     right: false
   };
 
@@ -28,7 +25,7 @@ class HomeView extends Component {
   render() {
     return (
       <div>
-        <Drawer width="50%" containerClassName="drawer--party" className="drawer--prompt" anchor="right" open={this.state.right} onClose={this.toggleDrawer('right', false)}>
+        <Drawer width="50%" className="drawer--prompt" anchor="right" open={this.state.right} onClose={this.toggleDrawer('right', false)}>
           <button
             className="button plain button--close"
             tabIndex={0}
@@ -43,7 +40,7 @@ class HomeView extends Component {
         <AppBar />
         <div className="toolbar">
           <div className="contents">
-            <p>Viewing Prompts</p>
+            <h2>Viewing Prompts</h2>
             <button className="button" onClick={this.toggleDrawer('right', true)}><Add /> Add A Prompt</button>
           </div>
         </div>
