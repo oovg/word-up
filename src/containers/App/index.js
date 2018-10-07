@@ -12,6 +12,7 @@ import PromptView from 'containers/PromptView'
 
 import constants from 'core/types'
 import PromptComposer from '../../components/PromptComposer'
+import PassageComposer from '../../components/PassageComposer'
 import GetShares from '../../components/GetShares'
 import SellShares from '../../components/SellShares'
 import { closeRightDrawer, openRightDrawer, updateDrawerContext } from '../../core/actions/actions-ui'
@@ -58,7 +59,7 @@ class App extends Component {
   versionsDrawer(promptId, passageId) {
     return (
       <div className="contents">
-        <h2>Buy this shit!</h2>
+        <h2>Stake a passage version.</h2>
         <div className="versions">
           { this.versions(promptId, passageId) }
         </div>
@@ -72,6 +73,12 @@ class App extends Component {
     if (drawer.context === constants.PROMPT_COMPOSER) {
       return (
         <PromptComposer />
+      )
+    }
+
+    if (drawer.context === constants.PASSAGE_COMPOSER) {
+      return (
+        <PassageComposer />
       )
     }
 

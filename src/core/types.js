@@ -9,4 +9,5 @@ export default keyMirror({
   VERSIONS: null,
   GET_SHARES: null,
   SELL_SHARES: null,
+  PASSAGE_COMPOSER: null,
 })

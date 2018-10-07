@@ -6,3 +6,11 @@ export function addPrompt(body) {
     body
   }
 }
+
+
+export function addPassage(body) {
+  return {
+    type: constants.ADD_PASSAGE,
+    body
+  }
+}
