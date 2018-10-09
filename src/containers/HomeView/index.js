@@ -22,6 +22,8 @@ class HomeView extends Component {
     factory.createTCR('content', 2, erc20Addr, 0)
   }
 
+    ;
+
 
   openPromptComposer() {
     this.props.openRightDrawer()
