@@ -1,4 +1,5 @@
-import abi from './TcrFactoryAbi.js'
+import abi from './TcrFactoryAbi.js';
+var FakeDaiAddress = "0x336a213839f8b27518aaf40d9afe9788e2a8a44c";
 
 class TcrFactory {
   constructor(web3, account, contractAddress) {
@@ -15,7 +16,7 @@ class TcrFactory {
         console.log('error: ', error)
       }
     )
-  }  
+  }
 
 };
 
