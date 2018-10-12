@@ -95,7 +95,7 @@ module.exports = [
             marketCap: 4.23
           },
           {
-            body: '',
+            body: 'There was warmth in the darkness,',
             marketCap: 1.24
           }
         ]
@@ -103,7 +103,7 @@ module.exports = [
       {
         versions: [
           {
-            body: 'Upon hearing those words from the dark lord himself “I can’t take what you don’t have”....he decided to go back to his apartment and cry.',
+            body: ' Upon hearing those words from the dark lord himself “I can’t take what you don’t have”....he decided to go back to his apartment and cry.',
             marketCap: 2.10
           }
         ]
