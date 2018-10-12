@@ -14,6 +14,8 @@
       fill: #fff;
     }
     .nav {
+      display: flex;
+      align-items: center;
       .nav-item {
         display: inline-block;
         margin-left: 25px;
