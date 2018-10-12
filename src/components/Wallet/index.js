@@ -10,7 +10,7 @@ class Wallet extends React.Component {
     walletIsOpen: false,
     account: null,
     ethBalance: null,
-  };
+  }
 
   componentDidMount = async () => {
     this.web3Service = getWeb3ServiceInstance();
@@ -18,11 +18,11 @@ class Wallet extends React.Component {
     const balance = await this.web3Service.getAccountBalance(account);
     const ethBalance = await this.web3Service.toEth(balance);
     this.setState({ account, ethBalance });
-  };
+  }
 
   toggleWallet = () => {
     this.setState({ walletIsOpen: !this.state.walletIsOpen });
-  };
+  }
 
   componentWillMount() {
     document.addEventListener('mousedown', this.handleClick, false);
