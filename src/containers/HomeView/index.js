@@ -19,10 +19,8 @@ class HomeView extends Component {
     const erc20Addr = '0x08cd0c6dc1ff4614053dca4a4a6aa39655d19b32'
     const factory = new TcrFactory(web3, contractAddr)
 
-    factory.createTCR('content', 2, erc20Addr, 0)
+    // factory.createTCR('content', 2, erc20Addr, 0)
   }
-
-    ;
 
 
   openPromptComposer() {
