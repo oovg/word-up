@@ -1,0 +1,44 @@
+@import '../../global.scss';
+
+.wallet {
+  position: relative;
+  color: #333;
+  .wallet--button {
+    cursor: pointer;
+  }
+  .wallet--view {
+    position: absolute;
+    top: 45px;
+    right: 0px;
+    width: 100%;
+    min-width: 320px;
+    height: auto;
+    background-color: #fff;
+    padding: 25px;
+    span {
+      display: block;
+      font-size: .85em;
+      opacity: .75;
+    }
+    button.close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      border: none;
+      background-color: transparent;
+      color: $od-light-purple;
+      svg {
+        fill:$od-light-purple;
+      }
+      &:hover {
+        svg { fill:$ntv-action; }
+      }
+    }
+  }
+}
+
+.approve--view {
+  border-top: 1px solid #efefef;
+  text-align: center;
+  button { margin: 0 auto;}
+}

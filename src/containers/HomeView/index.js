@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import Add from '@material-ui/icons/Add';
 import constants from 'core/types';
 
-import { getWeb3ServiceInstance } from '../../utils/Web3Service';
-
 import PromptList from '../../components/PromptList';
 import AppBar from '../../components/AppBar';
 import { addPrompt } from '../../core/actions/actions-prompts';
@@ -19,27 +17,15 @@ import {
 import './styles.scss';
 
 class HomeView extends Component {
-  state = {
-    account: null,
-  };
-
-  componentDidMount = async () => {
-    this.web3Service = getWeb3ServiceInstance();
-    const account = await this.web3Service.getMainAccount();
-    this.setState({ account });
-  };
-
   openPromptComposer() {
     this.props.openRightDrawer();
     this.props.updateDrawerContext(constants.PROMPT_COMPOSER, {});
   }
 
   render() {
-    const account = this.state.account;
-
     return (
       <div>
-        <AppBar account={account} />
+        <AppBar />
         <div className="toolbar">
           <div className="contents">
             <h2>Viewing Prompts</h2>

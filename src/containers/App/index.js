@@ -10,6 +10,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import theme from 'configs/theme/config-theme';
 import HomeView from 'containers/HomeView';
 import PromptView from 'containers/PromptView';
+import AppBar from '../../components/AppBar';
 
 import { getWeb3ServiceInstance } from '../../utils/Web3Service';
 
