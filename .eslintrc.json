@@ -1,0 +1,56 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "parser": "babel-eslint",
+  "extends": [
+    "plugin:prettier/recommended",
+    "prettier/react",
+    "eslint:recommended"
+  ],
+  "globals": {
+    "jest": true,
+    "before": true,
+    "beforeEach": true,
+    "afterEach": true,
+    "describe": true,
+    "expect": true,
+    "it": true,
+    "buildComponent": true,
+    "moxiosResponse": true,
+    "shallow": true,
+    "mount": true,
+    "render": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "prettier"
+  ],
+  "rules": {
+    "no-console": 0,
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "trailingComma": "all",
+        "arrowParens": "always",
+        "jsxBracketSameLine": false
+      }
+    ],
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "semi": [
+      "error",
+      "always"
+    ]
+  }
+}
