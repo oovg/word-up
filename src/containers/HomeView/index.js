@@ -31,7 +31,7 @@ class HomeView extends Component {
 
   loadContract = async () => {
     const contract = await this.factoryService.initContracts();
-    console.log(contract);
+    console.log('contract', contract);
   };
 
   openPromptComposer() {
