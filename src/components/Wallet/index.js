@@ -11,7 +11,7 @@ class Wallet extends React.Component {
     account: null,
     ethBalance: null,
     network: null,
-  };
+  }
 
   componentDidMount = async () => {
     this.web3Service = getWeb3ServiceInstance();
@@ -20,11 +20,26 @@ class Wallet extends React.Component {
     const ethBalance = await this.web3Service.toEth(balance);
     const network = await this.web3Service.getNetwork();
     this.setState({ account, ethBalance, network });
-  };
+  
 
   toggleWallet = () => {
     this.setState({ walletIsOpen: !this.state.walletIsOpen });
-  };
+  }
+
+  componentWillMount() {
+    document.addEventListener('mousedown', this.handleClick, false);
+  }
+
+  componentWillUnmount() {
+    document.addEventListener('mousedown', this.handleClick, false);
+  }
+
+  handleClick = (e) => {
+    if (this.node.contains(e.target)) {
+      return;
+    }
+    this.toggleWallet();
+  }
 
   render() {
     const { account, ethBalance, network } = this.state;
@@ -35,11 +50,11 @@ class Wallet extends React.Component {
           {account ? <Blockie seed={account} /> : null}
         </div>
         {this.state.walletIsOpen && (
-          <div className="wallet--view">
+          <div className="wallet--view" ref={node => this.node = node}>
             <button className="close button" onClick={this.toggleWallet}>
               <Close />
             </button>
-            <p>
+            <p className="account">
               <span>Account</span>
               {account}
             </p>
