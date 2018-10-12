@@ -58,10 +58,6 @@ const AppBar = (props) => {
           <div className="nav-item">
             <Wallet />
           </div>
-<<<<<<< HEAD
-=======
-          {/* <NetworkStatus className="nav-item network" /> */}
->>>>>>> b5deec699b1220471fc70c73fb146343f0ba4135
         </div>
       </div>
     </div>
