@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import Add from '@material-ui/icons/Add';
 import constants from 'core/types';
 
+import { getWeb3ServiceInstance } from '../../utils/Web3Service';
+
 import PromptList from '../../components/PromptList';
 import AppBar from '../../components/AppBar';
 import { addPrompt } from '../../core/actions/actions-prompts';
@@ -12,26 +14,19 @@ import {
 } from '../../core/actions/actions-ui';
 // import TcrFactory from '../../api/TcrFactory'
 
-import TcrFactoryService from '../../utils/TcrFactoryWeb3';
+// import TcrFactoryService from '../../utils/TcrFactoryWeb3';
 
 import './styles.scss';
 
 class HomeView extends Component {
-  constructor(props) {
-    super(props);
-    const account = '0xd66e018cc12b0e35dc1abf0991cef06a6bd295b9';
-    const contractAddr = '0x73f24e09486db7e69705f465832be91b13e67917';
-    const erc20Addr = '0x08cd0c6dc1ff4614053dca4a4a6aa39655d19b32';
-    // const factory = new TcrFactory(web3, contractAddr)
+  state = {
+    account: null,
+  };
 
-    this.factoryService = new TcrFactoryService();
-    this.loadContract();
-    // factory.createTCR('content', 2, erc20Addr, 0)
-  }
-
-  loadContract = async () => {
-    const contract = await this.factoryService.initContracts();
-    console.log(contract);
+  componentDidMount = async () => {
+    this.web3Service = getWeb3ServiceInstance();
+    const account = await this.web3Service.getMainAccount();
+    this.setState({ account });
   };
 
   openPromptComposer() {
@@ -40,9 +35,11 @@ class HomeView extends Component {
   }
 
   render() {
+    const account = this.state.account;
+
     return (
       <div>
-        <AppBar />
+        <AppBar account={account} />
         <div className="toolbar">
           <div className="contents">
             <h2>Viewing Prompts</h2>

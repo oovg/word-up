@@ -1,12 +1,12 @@
-import React from 'react';;
-import PropTypes from 'prop-types';;
-import { AppBar as MuiAppBar } from '@material-ui/core';;
-import { Link } from 'react-router-dom';;
+import React from 'react';
+import PropTypes from 'prop-types';
+import { AppBar as MuiAppBar } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 // import NetworkStatus from 'react-web3-network-status'
-import { styles } from './styles.scss';;
+import { styles } from './styles.scss';
 
 const AppBar = (props) => {
-  const { children } = props;;
+  const { children } = props;
 
   return (
     <div className={styles}>
@@ -59,15 +59,15 @@ const AppBar = (props) => {
         </div>
       </div>
     </div>
-  );;
-};;
+  );
+};
 
 AppBar.propTypes = {
   children: PropTypes.node,
-};;
+};
 
 AppBar.defaultProps = {
   children: null,
-};;
+};
 
-export default AppBar;;
+export default AppBar;
