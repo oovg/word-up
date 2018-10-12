@@ -2,7 +2,6 @@ import React                   from 'react'
 import PropTypes               from 'prop-types'
 import { AppBar as MuiAppBar } from '@material-ui/core'
 import { Link } from 'react-router-dom'
-import NetworkStatus from 'react-web3-network-status'
 import Wallet from '../Wallet'
 import { styles }              from './styles.scss'
 
@@ -31,7 +30,6 @@ const AppBar = (props) => {
           <div className="nav-item">
             <Wallet />
           </div>
-          <NetworkStatus className="nav-item network" />
         </div>
       </div>
     </div>
