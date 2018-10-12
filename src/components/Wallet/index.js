@@ -19,8 +19,9 @@ class Wallet extends React.Component {
     const balance = await this.web3Service.getAccountBalance(account);
     const ethBalance = await this.web3Service.toEth(balance);
     const network = await this.web3Service.getNetwork();
-    this.setState({ account, ethBalance, network });
-  
+    this.setState({ account, ethBalance, network});
+  }
+
 
   toggleWallet = () => {
     this.setState({ walletIsOpen: !this.state.walletIsOpen });
