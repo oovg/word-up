@@ -36,7 +36,7 @@ class Wallet extends React.Component {
     if (this.node.contains(e.target)) {
       return;
     }
-    this.closeWallet();
+    this.toggleWallet();
   }
 
   render() {

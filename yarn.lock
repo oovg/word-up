@@ -7501,6 +7501,13 @@ rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-blockies@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/react-blockies/-/react-blockies-1.4.0.tgz#4a23927c8c2368df569054778e732dc9d32342ab"
+  integrity sha512-AQe8oLnb5TabDrIJJ4XzoH2djapuLtEockB+Fcx/5hLAFzFmbsRsv8tJL3p+LOb3gK0hLJlJfd1JMtjSAJpcNA==
+  dependencies:
+    prop-types "^15.5.10"
+
 react-deep-force-update@^1.0.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/react-deep-force-update/-/react-deep-force-update-1.1.2.tgz#3d2ae45c2c9040cbb1772be52f8ea1ade6ca2ee1"
