@@ -10,6 +10,7 @@ class Wallet extends React.Component {
     walletIsOpen: false,
     account: null,
     ethBalance: null,
+    network: null,
   };
 
   componentDidMount = async () => {
@@ -17,7 +18,8 @@ class Wallet extends React.Component {
     const account = await this.web3Service.getMainAccount();
     const balance = await this.web3Service.getAccountBalance(account);
     const ethBalance = await this.web3Service.toEth(balance);
-    this.setState({ account, ethBalance });
+    const network = await this.web3Service.getNetwork();
+    this.setState({ account, ethBalance, network });
   };
 
   toggleWallet = () => {
@@ -25,7 +27,7 @@ class Wallet extends React.Component {
   };
 
   render() {
-    const { account, ethBalance } = this.state;
+    const { account, ethBalance, network } = this.state;
 
     return (
       <div className="wallet">
@@ -48,6 +50,7 @@ class Wallet extends React.Component {
               <p>You need to approve DAI transactions</p>
               <button className="button">Approve DAI</button>
             </div>
+            <p>network: {network}</p>
           </div>
         )}
       </div>

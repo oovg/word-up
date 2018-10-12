@@ -33,6 +33,13 @@ class PromptComposer extends Component {
     console.log(this.props.account);
     console.log(this.state.value);
 
+    this.factoryService.createTCR(
+      this.state.value,
+      1,
+      '0xf25186b5081ff5ce73482ad761db0eb0d25abfbf', // dai contract?
+      0,
+    );
+
     this.setState({
       value: '',
     });
