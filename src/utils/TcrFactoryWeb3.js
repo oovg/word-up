@@ -3,7 +3,7 @@ import { getWeb3ServiceInstance } from './Web3Service';
 
 export default class TrcFactoryService {
   web3Service;
-  trcFactoryContract;
+  tcrFactoryContract;
 
   constructor() {
     this.web3Service = getWeb3ServiceInstance();
@@ -11,8 +11,8 @@ export default class TrcFactoryService {
   }
 
   async initContracts() {
-    console.log(TrcFactoryAbi);
-    return (this.trcFactoryContract = await this.web3Service.initContract(
+    console.log('init***', TrcFactoryAbi);
+    return (this.tcrFactoryContract = await this.web3Service.initContract(
       TrcFactoryAbi.abi,
       this.tokenAddress,
     ));
@@ -30,9 +30,11 @@ export default class TrcFactoryService {
       .call();
   }
 
-  async createTcr(content, ratio, erc20, startingBalance) {
+  async createTCR(content, ratio, erc20, startingBalance) {
+    console.log(this.tcrFactoryContract);
+
     return await this.tcrFactoryContract.methods
-      .createTcr(content, ratio, erc20, startingBalance)
+      .createTCR(content, ratio, erc20, startingBalance)
       .call();
   }
 
