@@ -43,28 +43,12 @@ class Wallet extends React.Component {
     const { account, ethBalance } = this.state;
 
     return (
-<<<<<<< HEAD
-      <div className="wallet" >
-        <div className="wallet--button" onClick={this.openWallet}>
-          <Blockie seed="0xfe89f7s098guoirshg19p843yp8tup84u"/>
-        </div>
-        { this.state.walletIsOpen &&
-        <div className="wallet--view" ref={node => this.node = node}>
-          <button className="close button" onClick={this.closeWallet}><Close /></button>
-          <p><span>Account</span>0xfe89f7s098guoirshg19p843yp8tup84u</p>
-          <h4>Balances</h4>
-          <p>3.0 ETH</p>
-          <p>200.0 DAI</p>
-          <div className="approve--view">
-            <p>You need to approve DAI transactions</p>
-            <button className="button">Approve DAI</button>
-=======
       <div className="wallet">
         <div className="wallet--button" onClick={this.toggleWallet}>
           {account ? <Blockie seed={account} /> : null}
         </div>
         {this.state.walletIsOpen && (
-          <div className="wallet--view">
+          <div className="wallet--view" ref={node => this.node = node}>
             <button className="close button" onClick={this.toggleWallet}>
               <Close />
             </button>
@@ -79,7 +63,6 @@ class Wallet extends React.Component {
               <p>You need to approve DAI transactions</p>
               <button className="button">Approve DAI</button>
             </div>
->>>>>>> b5deec699b1220471fc70c73fb146343f0ba4135
           </div>
         )}
       </div>
