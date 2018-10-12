@@ -1,4 +1,4 @@
-import TrcFactoryAbi from './TcrFactoryAbi.json';
+import TrcFactoryAbi from '../contracts/TcrFactory.json';
 import { getWeb3ServiceInstance } from './Web3Service';
 
 export default class TrcFactoryService {
