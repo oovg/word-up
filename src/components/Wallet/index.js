@@ -52,7 +52,7 @@ class Wallet extends React.Component {
             <button className="close button" onClick={this.toggleWallet}>
               <Close />
             </button>
-            <p>
+            <p className="account">
               <span>Account</span>
               {account}
             </p>
